@@ -1,0 +1,309 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Prueba_Tecnica
+build_property.RootNamespace = Prueba_Tecnica
+build_property.ProjectDir = C:\Users\Kalox\source\repos\Prueba Tecnica\Prueba Tecnica\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Kalox\source\repos\Prueba Tecnica\Prueba Tecnica
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Account/ForgotPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Account/ResetPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Alojamientoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxvamFtaWVudG9lc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Alojamientoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxvamFtaWVudG9lc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Alojamientoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxvamFtaWVudG9lc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Alojamientoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxvamFtaWVudG9lc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Alojamientoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWxvamFtaWVudG9lc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Apartamentoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBhcnRhbWVudG9lc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Apartamentoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBhcnRhbWVudG9lc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Apartamentoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBhcnRhbWVudG9lc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Apartamentoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBhcnRhbWVudG9lc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Apartamentoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBhcnRhbWVudG9lc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Camas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtYXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Camas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtYXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Camas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtYXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Camas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtYXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Camas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FtYXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Habitacions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFiaXRhY2lvbnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Habitacions/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFiaXRhY2lvbnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Habitacions/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFiaXRhY2lvbnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Habitacions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFiaXRhY2lvbnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Habitacions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFiaXRhY2lvbnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/MisReservasAlojs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzUmVzZXJ2YXNBbG9qc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/MisReservasAlojs/CreateFromTarifa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzUmVzZXJ2YXNBbG9qc1xDcmVhdGVGcm9tVGFyaWZhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/MisReservasAlojs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzUmVzZXJ2YXNBbG9qc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/MisReservasAlojs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzUmVzZXJ2YXNBbG9qc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/MisReservasAlojs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzUmVzZXJ2YXNBbG9qc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/MisReservasAlojs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzUmVzZXJ2YXNBbG9qc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/MisReservasApt/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzUmVzZXJ2YXNBcHRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/MisReservasApt/CreateFromTarifa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzUmVzZXJ2YXNBcHRcQ3JlYXRlRnJvbVRhcmlmYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/MisReservasApt/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzUmVzZXJ2YXNBcHRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/MisReservasApt/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzUmVzZXJ2YXNBcHRcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/MisReservasApt/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzUmVzZXJ2YXNBcHRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/MisReservasApt/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWlzUmVzZXJ2YXNBcHRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/ReservaApartamentoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YUFwYXJ0YW1lbnRvZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/ReservaApartamentoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YUFwYXJ0YW1lbnRvZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/ReservaApartamentoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YUFwYXJ0YW1lbnRvZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/ReservaApartamentoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YUFwYXJ0YW1lbnRvZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/ReservaApartamentoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YUFwYXJ0YW1lbnRvZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Sedes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VkZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Sedes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VkZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Sedes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VkZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Sedes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VkZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Sedes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VkZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/TarifaAlojamientoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyaWZhQWxvamFtaWVudG9lc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/TarifaAlojamientoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyaWZhQWxvamFtaWVudG9lc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/TarifaAlojamientoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyaWZhQWxvamFtaWVudG9lc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/TarifaAlojamientoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyaWZhQWxvamFtaWVudG9lc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/TarifaAlojamientoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyaWZhQWxvamFtaWVudG9lc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/TarifaApartamentoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyaWZhQXBhcnRhbWVudG9lc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/TarifaApartamentoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyaWZhQXBhcnRhbWVudG9lc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/TarifaApartamentoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyaWZhQXBhcnRhbWVudG9lc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/TarifaApartamentoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyaWZhQXBhcnRhbWVudG9lc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/TarifaApartamentoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyaWZhQXBhcnRhbWVudG9lc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Temporadums/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcG9yYWR1bXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Temporadums/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcG9yYWR1bXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Temporadums/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcG9yYWR1bXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Temporadums/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcG9yYWR1bXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Temporadums/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcG9yYWR1bXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Kalox/source/repos/Prueba Tecnica/Prueba Tecnica/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-nrjugnaa5g

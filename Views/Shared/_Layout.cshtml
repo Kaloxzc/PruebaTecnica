@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Prueba Tecnica</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <style>
+        #authModal .nav-tabs {
+            margin-bottom: 1rem;
+        }
+
+        #authModal .tab-content {
+            border-left: 1px solid #dee2e6;
+            border-right: 1px solid #dee2e6;
+            border-bottom: 1px solid #dee2e6;
+            border-radius: 0 0 .25rem .25rem;
+        }
+
+        #authModal .form-control {
+            margin-bottom: 1rem;
+        }
+        /* Estilos para la barra de navegación */
+        .navbar {
+            padding: 0.5rem 1rem;
+        }
+
+        /* Estilos para el modal de autenticación */
+        #authModal .nav-tabs {
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        #authModal .nav-link {
+            color: #495057;
+            border: none;
+            padding: 0.75rem 1.5rem;
+        }
+
+            #authModal .nav-link.active {
+                color: #0d6efd;
+                background-color: transparent;
+                border-bottom: 2px solid #0d6efd;
+            }
+
+        #authModal .tab-content {
+            padding: 1.5rem 0;
+        }
+
+        /* Estilos para los botones de autenticación */
+        .auth-btn {
+            transition: all 0.3s ease;
+        }
+
+            .auth-btn:hover {
+                transform: translateY(-2px);
+            }
+        /* Asegura que el dropdown tenga posición relativa */
+        .navbar-nav .dropdown {
+            position: relative;
+        }
+
+        /* Estilo para el menú desplegable */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            z-index: 1000;
+            display: none; /* Se mostrará con JS */
+            min-width: 10rem;
+            padding: 0.5rem 0;
+            margin: 0.125rem 0 0;
+            font-size: 1rem;
+            color: #212529;
+            text-align: left;
+            list-style: none;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid rgba(0,0,0,.15);
+            border-radius: 0.25rem;
+        }
+
+            /* Mostrar el dropdown cuando tiene la clase show */
+            .dropdown-menu.show {
+                display: block;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FondoXYZ</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Apartamentoes" asp-action="Index">Apartamentos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Alojamientoes" asp-action="Index">Sedes Recreativas</a>
+                        </li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="TarifaApartamentoes" asp-action="Index">Tarifas Apartamentos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="TarifaAlojamientoes" asp-action="Index">Tarifas Sedes Recreativas</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a style=position:"hidden";></a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <!-- Tu logo/marca aquí -->
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <!-- Tus elementos de menú existentes -->
+                    </ul>
+                    <ul class="navbar-nav">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <!-- Este es el contenedor principal correcto -->
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-person-circle me-1"></i> @User.Identity.Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" asp-controller="Manage" asp-action="Index">Mi Perfil</a></li>
+                                    <li><a class="dropdown-item" asp-controller="MisReservasApt" asp-action="Index">Mis Reservas (Apartamentos)</a></li>
+                                    <li><a class="dropdown-item" asp-controller="MisReservasAlojs" asp-action="Index">Mis Reservas (Alojamientos)</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Account" asp-action="ChangePassword">Cambiar Contraseña</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <form asp-controller="Account" asp-action="Logout" method="post">
+                                            <button type="submit" class="dropdown-item">Cerrar Sesión</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#authModal">
+                                    <i class="bi bi-box-arrow-in-right"></i> Iniciar sesión
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#authModal" data-auth-tab="register">
+                                    <i class="bi bi-person-plus"></i> Registrarse
+                                </button>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="authModalLabel">Autenticación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs mb-3" id="authTabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register">Registrarse</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <!-- Login Tab -->
+                        <div class="tab-pane fade show active" id="login">
+                            <form asp-controller="Account" asp-action="Login" method="post">
+                                <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="loginEmail" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="loginPassword" name="password" required>
+                                </div>
+                                <a asp-controller="Account" asp-action="ForgotPassword" class="btn btn-link">¿Olvidaste tu contraseña?</a>
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary">Ingresar</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Register Tab -->
+                        <div class="tab-pane fade" id="register">
+                            <form asp-controller="Account" asp-action="Register" method="post">
+                                <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
+                                <div class="mb-3">
+                                    <label for="registerName" class="form-label">Nombre Completo</label>
+                                    <input type="text" class="form-control" id="registerName" name="fullName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="registerEmail" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="registerPassword" name="password" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerConfirmPassword" class="form-label">Confirmar Contraseña</label>
+                                    <input type="password" class="form-control" id="registerConfirmPassword" name="confirmPassword" required>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-success">Registrarse</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var authModal = document.getElementById('authModal');
+
+            authModal.addEventListener('show.bs.modal', function (event) {
+                var button = event.relatedTarget;
+                var tab = button.getAttribute('data-auth-tab');
+
+                if(tab === 'register') {
+                    var registerTab = new bootstrap.Tab(document.getElementById('register-tab'));
+                    registerTab.show();
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+            var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+                return new bootstrap.Dropdown(dropdownToggleEl)
+            })
+        });
+    </script>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Prueba_Tecnica - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

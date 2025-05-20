@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ReservaApartamento>
+@{
+    ViewData["Title"] = "Reservas de Apartamentos";
+}
+
+<h2 class="text-center mt-4">Reservas de Apartamentos</h2>
+
+<table class="table table-striped table-bordered mt-4">
+    <thead class="table-dark">
+        <tr>
+            <th>#</th>
+            <th>Apartamento</th>
+            <th>Temporada</th>
+            <th>Fecha de Llegada</th>
+            <th>Fecha de Salida</th>
+            <th>Noches</th>
+            <th>Personas</th>
+            <th>Lavandería</th>
+            <th>Total</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reserva in Model)
+        {
+            <tr>
+                <td>@reserva.IdReserva</td>
+                <td>@reserva.Apartamento?.Nombre</td>
+                <td>@reserva.Temporada?.Nombre</td>
+                <td>@reserva.FechaLlegada.ToShortDateString()</td>
+                <td>@reserva.FechaSalida.ToShortDateString()</td>
+                <td>@reserva.Noches</td>
+                <td>@reserva.NumeroPersonas</td>
+                <td>
+                    @if (reserva.IncluyeLavanderia)
+                    {
+                        <span class="badge bg-success">Sí</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">No</span>
+                    }
+                </td>
+                <td>@reserva.PrecioTotal.ToString("C")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@reserva.IdReserva" class="btn btn-sm btn-primary">Detalles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,67 @@
+﻿@model Prueba_Tecnica.Models.MisReservasAloj
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>MisReservasAloj</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdAlojamiento" class="control-label"></label>
+                <select asp-for="IdAlojamiento" class ="form-control" asp-items="ViewBag.IdAlojamiento"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdTarifa" class="control-label"></label>
+                <select asp-for="IdTarifa" class ="form-control" asp-items="ViewBag.IdTarifa"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaLlegada" class="control-label"></label>
+                <input asp-for="FechaLlegada" class="form-control" />
+                <span asp-validation-for="FechaLlegada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaSalida" class="control-label"></label>
+                <input asp-for="FechaSalida" class="form-control" />
+                <span asp-validation-for="FechaSalida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaCreacion" class="control-label"></label>
+                <input asp-for="FechaCreacion" class="form-control" />
+                <span asp-validation-for="FechaCreacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroPersonas" class="control-label"></label>
+                <input asp-for="NumeroPersonas" class="form-control" />
+                <span asp-validation-for="NumeroPersonas" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IncluyeServicios" /> @Html.DisplayNameFor(model => model.IncluyeServicios)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Observaciones" class="control-label"></label>
+                <input asp-for="Observaciones" class="form-control" />
+                <span asp-validation-for="Observaciones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

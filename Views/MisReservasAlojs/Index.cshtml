@@ -1,0 +1,215 @@
+﻿@model IEnumerable<Prueba_Tecnica.Models.MisReservasAloj>
+
+@{
+    ViewData["Title"] = "Mis Reservas de Alojamiento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show">
+        @TempData["ErrorMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+<div class="container">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h3 mb-0">Mis Reservas de Alojamiento</h1>
+    </div>
+
+    <table id="reservasAlojTable" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Alojamiento</th>
+                <th>Imagen</th>
+                <th>Tarifa</th>
+                <th>Fechas</th>
+                <th>Personas</th>
+                <th>Servicios</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <strong>@item.Alojamiento.Nombre</strong>
+                        <div class="text-muted small">
+                            @if (@item.Alojamiento.CapacidadMaxima == null)
+                            {
+                                <span>Capacidad Maxima sin definir</span>
+                            }
+                            else
+                            {
+                                <span>@item.Alojamiento.CapacidadMaxima personas</span>
+                            }
+                        </div>
+                    </td>
+                    <td>
+                        @if (item.Alojamiento.ImagenAlojamiento != null && item.Alojamiento.ImagenAlojamiento.Length > 0)
+                        {
+                            <div class="mt-3">
+                                <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.Alojamiento.ImagenAlojamiento)"
+                                     class="img-fluid rounded"
+                                     alt="Imagen del alojamiento"
+                                     style="width:125px;height:100px">
+                            </div>
+                        }
+                        else
+                        {
+                            <i class="bi bi-image text-muted" style="font-size: 2rem;"></i>
+                        }
+                    </td>
+                    <td>
+                        @item.Tarifa.Precio.
+                        <div class="text-muted small">
+                            @item.Tarifa.IdTemporadaNavigation?.Nombre
+                        </div>
+                    </td>
+                    <td>
+                        <div class="d-flex flex-column">
+                            <span>@item.FechaLlegada.ToString("dd MMM yyyy")</span>
+                            <span class="text-center"><i class="bi bi-arrow-down"></i></span>
+                            <span>@item.FechaSalida.ToString("dd MMM yyyy")</span>
+                            <span class="badge bg-secondary mt-1">
+                                @((item.FechaSalida - item.FechaLlegada).Days) noches
+                            </span>
+                        </div>
+                    </td>
+                    <td>
+                        @item.NumeroPersonas
+                    </td>
+                    <td>
+                        @if (item.IncluyeServicios)
+                        {
+                            <span class="badge bg-success">Sí</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">No</span>
+                        }
+                    </td>
+                    <td>
+                        @* Aquí puedes agregar lógica para mostrar el estado si lo tienes en tu modelo *@
+                        <span class="badge bg-success">Confirmada</span>
+                    </td>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group">
+                            <a asp-action="Edit" asp-route-id="@item.IdReserva" class="btn btn-outline-primary" title="Editar">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#reservasAlojTable').DataTable({
+                "paging": true,
+                "searching": true,
+                "ordering": true,
+                "pageLength": 10,
+                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Todos"]],
+                "language": {
+                    "lengthMenu": "Mostrar _MENU_ registros",
+                    "zeroRecords": "No se encontraron resultados",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                    "infoEmpty": "Mostrando 0 a 0 de 0 registros",
+                    "infoFiltered": "(filtrado de _MAX_ registros totales)",
+                    "search": "Buscar:",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                },
+                "columnDefs": [
+                    { "orderable": false, "targets": [1, 5, 6, 7] }
+                ]
+            });
+        });
+    </script>
+}
+
+<style>
+    table {
+        margin-top: 30px;
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #f8f9fa;
+    }
+
+    th {
+        background-color: #1f2937;
+        color: #ffffff;
+        font-weight: bold;
+        padding: 12px;
+        text-align: center;
+    }
+
+    td {
+        background-color: #ffffff;
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #e3e3e3;
+        vertical-align: middle;
+    }
+
+    .badge {
+        font-size: 0.85em;
+        padding: 0.5em 0.75em;
+        font-weight: 500;
+    }
+
+    .bg-success {
+        background-color: #28a745;
+    }
+
+    .bg-secondary {
+        background-color: #6c757d;
+    }
+
+    .btn-group .btn {
+        padding: 0.25rem 0.5rem;
+    }
+
+    .img-fluid {
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .container {
+        max-width: 95%;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+</style>

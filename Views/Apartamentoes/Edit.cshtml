@@ -1,0 +1,42 @@
+﻿@model MisReservasApt
+
+<h2>Nueva Reserva</h2>
+
+@if (ViewBag.ApartamentoNombre != null)
+{
+    <div class="alert alert-info">
+        <h5>Reservando: @ViewBag.ApartamentoNombre</h5>
+        <p>Tarifa aplicada: @ViewBag.TarifaInfo</p>
+    </div>
+}
+
+<form asp-action="Create">
+    <!-- Campos ocultos para la tarifa y apartamento -->
+    <input type="hidden" asp-for="IdTarifa" />
+    <input type="hidden" asp-for="IdApartamento" />
+
+    <div class="form-group">
+        <label asp-for="FechaLlegada" class="control-label"></label>
+        <input asp-for="FechaLlegada" class="form-control" type="date"
+               min="@DateTime.Now.ToString("yyyy-MM-dd")" />
+        <span asp-validation-for="FechaLlegada" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FechaSalida" class="control-label"></label>
+        <input asp-for="FechaSalida" class="form-control" type="date"
+               min="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")" />
+        <span asp-validation-for="FechaSalida" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Confirmar Reserva" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

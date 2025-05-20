@@ -1,0 +1,234 @@
+﻿@model IEnumerable<Prueba_Tecnica.Models.Apartamento>
+
+@{
+    ViewData["Title"] = "Apartamentos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+<div class="container">
+ 
+    <table id="myTable" class="display" style="width:120%" ;>
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("Numero")
+                </th>
+                <th>
+                    @Html.DisplayName("Imagen")
+                </th>
+                <th>
+                    @Html.DisplayName("Tipo")
+                </th>
+                <th>
+                    @Html.DisplayName("Ciudad")
+                </th>
+                <th>
+                    @Html.DisplayName("Capacidad Maxima")
+                </th>
+                <th>
+                    @Html.DisplayName("Salacomedor")
+                </th>
+                <th>
+                    @Html.DisplayName("Cocina")
+                </th>
+                <th>
+                    @Html.DisplayName("Parqueadero")
+                </th>
+                <th>
+                    @Html.DisplayName("Cantidad de habitaciones")
+                </th>
+                <th>
+                    @Html.DisplayName("Detalles")
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.ImagenDataURL))
+                        {
+                            <img src="@item.ImagenDataURL" alt="Imagen de Apartamento" style="width:125px;height:100px;" />
+                        }
+
+                        <form asp-action="SubirImagen" method="post" enctype="multipart/form-data" style="margin-top:5px;padding-right:25px">
+                            <input type="hidden" name="id" value="@item.Id" />
+                            @* <input type="file" name="Imagen" accept="image/*" style="width:100px;height:auto;" />
+                            <button type="submit" class="btn btn-sm btn-primary" style="margin-left:25px">Subir</button> *@
+                        </form>
+                    </td>                    
+                    <td class="text-center align-middle">
+                        <div class="icon-container">
+                            @if (item.EsHabitacion == true)
+                            {
+                                <i class="bi bi-house-fill fs-4 d-inline-block"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-building-fill fs-4 d-inline-block"></i>
+                            }
+                        </div>                    
+                    </td>
+                    <td>
+                        <div class="icon-container">
+                            @if (item.IdCiudad == 1)
+                            {
+                                <p>Medellín</p>
+                            }
+                            else
+                            {
+                                <p>Santa Marta</p>
+                            }
+                        </div>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CapacidadMaxima)
+                    </td>
+                    <td class="text-center align-middle">
+                       <div class="icon-container">
+                        @if (item.TieneSalaComedor == true)
+                        {
+                            <i class="bi bi-check2 text-success fs-4 d-inline-block"></i>
+                        }
+                        else
+                        {
+                            <i class="bi bi-x text-danger fs-4 d-inline-block"></i>
+                        }
+                       </div>
+                    </td>
+                    <td class="text-center align-middle">
+                       <div class="icon-container">
+                        @if (item.TieneCocina == true)
+                        {
+                            <i class="bi bi-check2 text-success fs-4 d-inline-block"></i>
+                        }
+                        else
+                        {
+                            <i class="bi bi-x text-danger fs-4 d-inline-block"></i>
+                        }
+                       </div>
+                    </td>
+                    <td class="text-center align-middle">
+                       <div class="icon-container">
+                        @if (item.TieneParqueadero == true)
+                        {
+                            <i class="bi bi-check2 text-success fs-4 d-inline-block"></i>
+                        }
+                        else
+                        {
+                            <i class="bi bi-x text-danger fs-4 d-inline-block"></i>
+                        }
+                       </div>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CantidadHabitaciones)
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="my-button">Ver detalles</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+        $('#tarifasTable').DataTable({
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+            "pageLength": 10,
+            "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Todos"]],
+            "language": {
+                "lengthMenu": "Mostrar _MENU_ registros",
+                "zeroRecords": "No se encontraron resultados",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                "infoEmpty": "Mostrando 0 a 0 de 0 registros",
+                "infoFiltered": "(filtrado de _MAX_ registros totales)",
+                "search": "Buscar:",
+                "paginate": {
+                    "first": "Primero",
+                    "last": "Último",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                }
+            }
+        });
+    });
+    </script>
+<style>
+    table {
+        margin-top: 30px;
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #f8f9fa;
+    }
+
+    th {
+        background-color: #1f2937;
+        color: #ffffff;
+        font-weight: bold;
+        padding: 12px;
+        text-align: center;
+        align-content:center;
+    }
+
+    td {
+        background-color: #ffffff;
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #e3e3e3;
+        vertical-align: middle; /* Asegura alineación vertical */
+    }
+
+    /* Estilo para los iconos */
+    .bi {
+        font-size: 1.5rem; /* Tamaño consistente */
+        display: inline-block; /* Mantiene el icono en el flujo */
+    }
+
+    .text-success {
+        color: #28a745 !important; /* Verde para check */
+    }
+
+    .text-danger {
+        color: #dc3545 !important; /* Rojo para x */
+    }
+
+    .container {
+        max-width: 95%; /* O un valor fijo como 1400px si prefieres */
+        margin: 0 auto; /* Centra el contenedor */
+        padding: 0 15px; /* Espacio a los lados */
+    }
+
+    #myTable {
+        width: 100% !important; /* Fuerza el ancho completo */
+        margin: 20px auto; /* Centra la tabla */
+    }
+
+    .my-button {
+        padding: 10px 20px;
+        background-color: #84cddc;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .my-button:hover {
+            background-color: #51bfd9;
+    }
+
+    .my-button:active {
+            background-color: #41a9ce;
+    }
+</style>

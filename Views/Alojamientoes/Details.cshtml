@@ -1,0 +1,173 @@
+﻿@model Prueba_Tecnica.Models.Alojamiento
+
+@{
+    ViewData["Title"] = "Detalles del Alojamiento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<div class="container mt-4" style="padding-left:20px;padding-top:20px;">
+    <div class="card shadow rounded-4 border-0" style="width:1200px;">
+        <div class="row g-0">
+            <!-- Imagen del Alojamiento (puedes agregarla si tu modelo tiene ImagenDataURL) -->
+            <div class="col-md-5" style="margin-left:20px;margin-top:20px;margin-right:-30px">
+                @if (!string.IsNullOrEmpty(Model.ImagenDataURL))
+                {
+                    <img src="@Model.ImagenDataURL" class="img-fluid rounded-start w-100 h-100 object-fit-cover" style="max-height: 400px;" alt="Imagen del alojamiento" />
+                }
+                else
+                {
+                    <div class="d-flex align-items-center justify-content-center bg-light h-100 text-muted" style="min-height: 400px;">
+                        <span>Sin imagen disponible</span>
+                    </div>
+                }
+            </div>
+
+            <!-- Detalles del Alojamiento -->
+            <div class="col-md-7" style="padding-left:50px;">
+                <div class="card-body">
+                    <h3 class="card-title mb-4">@Model.Nombre</h3>
+                    <h5 class="text-muted mb-4">@Model.Tipo</h5>
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Habitaciones: </strong> @Model.NumeroHabitaciones
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Baños: </strong> @Model.NumeroBanos
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Capacidad Máxima: </strong> @Model.CapacidadMaxima
+                        </li>
+
+                        <!-- Amenidades -->
+                        <li class="list-group-item">
+                            <strong>Sala: </strong>
+                            @if (Model.Sala == true)
+                            {
+                                <i class="bi bi-check2 text-success fs-5"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-x text-danger fs-5"></i>
+                            }
+                        </li>
+
+                        <li class="list-group-item">
+                            <strong>Cocina: </strong>
+                            @if (Model.Cocina == true)
+                            {
+                                <i class="bi bi-check2 text-success fs-5"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-x text-danger fs-5"></i>
+                            }
+                        </li>
+
+                        <li class="list-group-item">
+                            <strong>Cocineta: </strong>
+                            @if (Model.Cocineta == true)
+                            {
+                                <i class="bi bi-check2 text-success fs-5"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-x text-danger fs-5"></i>
+                            }
+                        </li>
+
+                        <li class="list-group-item">
+                            <strong>Terraza: </strong>
+                            @if (Model.Terraza == true)
+                            {
+                                <i class="bi bi-check2 text-success fs-5"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-x text-danger fs-5"></i>
+                            }
+                        </li>
+
+                        <li class="list-group-item">
+                            <strong>Comedor: </strong>
+                            @if (Model.Comedor == true)
+                            {
+                                <i class="bi bi-check2 text-success fs-5"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-x text-danger fs-5"></i>
+                            }
+                        </li>
+
+                        <li class="list-group-item">
+                            <strong>Televisor: </strong>
+                            @if (Model.Televisor == true)
+                            {
+                                <i class="bi bi-check2 text-success fs-5"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-x text-danger fs-5"></i>
+                            }
+                        </li>
+
+                        <li class="list-group-item">
+                            <strong>Sofá Cama: </strong>
+                            @if (Model.SofaCama == true)
+                            {
+                                <i class="bi bi-check2 text-success fs-5"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-x text-danger fs-5"></i>
+                            }
+                        </li>
+
+                        <li class="list-group-item">
+                            <strong>Nevera: </strong>
+                            @if (Model.Nevera == true)
+                            {
+                                <i class="bi bi-check2 text-success fs-5"></i>
+                            }
+                            else
+                            {
+                                <i class="bi bi-x text-danger fs-5"></i>
+                            }
+                        </li>
+
+                        <li class="list-group-item">
+                            <strong>Sede: </strong> @Model.IdSedeNavigation?.Nombre
+                        </li>
+
+                        @if (!string.IsNullOrEmpty(Model.Observaciones))
+                        {
+                            <li class="list-group-item">
+                                <strong>Observaciones: </strong> @Model.Observaciones
+                            </li>
+                        }
+                    </ul>
+
+                    <div class="mt-4 d-flex gap-3">                      
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Volver a la lista
+                        </a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#authModal">
+                                <i class="bi bi-calendar-check"><a asp-area="" asp-controller="TarifaAlojamientoes" asp-action="Index" style="color:white;text-decoration:none">Reserve</a></i>
+                            </button>
+                        }
+                        else
+                        {
+                            <button class="btn btn-secondary" disabled>
+                                <i class="bi bi-calendar-x"></i> Inicia sesión para reservar
+                            </button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

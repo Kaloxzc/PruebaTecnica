@@ -1,0 +1,53 @@
+﻿@model ReservaApartamento
+
+@{
+    ViewData["Title"] = "Crear Reserva";
+}
+
+<h2 class="text-center mt-4">Crear Reserva de Apartamento</h2>
+
+<form asp-action="Create" method="post" class="mt-4">
+    <div class="row g-3">
+        <input type="hidden" asp-for="IdApartamento" />
+
+        <div class="col-md-6">
+            <label asp-for="NumeroPersonas" class="form-label">Número de Personas</label>
+            <input asp-for="NumeroPersonas" class="form-control" min="1" />
+            <span asp-validation-for="NumeroPersonas" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="FechaLlegada" class="form-label">Fecha de Llegada</label>
+            <input asp-for="FechaLlegada" class="form-control" type="date" />
+            <span asp-validation-for="FechaLlegada" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="FechaSalida" class="form-label">Fecha de Salida</label>
+            <input asp-for="FechaSalida" class="form-control" type="date" />
+            <span asp-validation-for="FechaSalida" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6 form-check mt-4">
+            <input asp-for="IncluyeLavanderia" class="form-check-input" />
+            <label asp-for="IncluyeLavanderia" class="form-check-label">¿Incluye Lavandería?</label>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="PrecioTotal" class="form-label">Precio Total (se calcula automáticamente)</label>
+            <input asp-for="PrecioTotal" class="form-control" readonly />
+            <span asp-validation-for="PrecioTotal" class="text-danger"></span>
+        </div>
+
+        <div class="col-12 mt-3">
+            <button type="submit" class="btn btn-success">Guardar Reserva</button>
+            <a asp-action="Index" class="btn btn-secondary ms-2">Cancelar</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

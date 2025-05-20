@@ -1,0 +1,334 @@
+﻿@model Prueba_Tecnica.Models.MisReservasAloj
+
+@{
+    ViewData["Title"] = "Crear Reserva de Alojamiento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // Obtener los datos de ViewBag
+    var tarifa = ViewBag.TarifaInfo as TarifaAlojamiento;
+    var alojamiento = ViewBag.AlojamientoInfo as Alojamiento;  // Usar ViewBag.AlojamientoInfo directamente
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+<div class="container">
+    <h2>@ViewData["Title"]</h2>
+
+    <div class="card mb-4">
+        <div class="card-header bg-info text-white">
+            <h5>Información Completa del Alojamiento</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <!-- Columna de Información Básica -->
+                <div class="col-md-6">
+                    <h5>Información General</h5>
+                    <p><strong>Nombre:</strong> @alojamiento?.Nombre</p>
+                    <p><strong>Tipo:</strong> @alojamiento?.Tipo</p>
+                    <p><strong>Precio:</strong> @ViewBag.TarifaInfo.Precio</p>
+                    <p><strong>Capacidad Máxima:</strong> @alojamiento?.CapacidadMaxima personas</p>
+                    <p><strong>Habitaciones:</strong> @alojamiento?.NumeroHabitaciones</p>
+                    <p><strong>Baños:</strong> @alojamiento?.NumeroBanos</p>
+
+                    @if (!string.IsNullOrEmpty(alojamiento?.ImagenDataURL))
+                    {
+                        <div class="mt-3">
+                            <img src="@alojamiento.ImagenDataURL"
+                                 class="img-fluid rounded"
+                                 alt="Imagen del alojamiento"
+                                 style="max-height: 250px; width: 100%">
+                        </div>
+                    }
+                    else if (alojamiento?.ImagenAlojamiento != null && alojamiento.ImagenAlojamiento.Length > 0)
+                    {
+                        <div class="mt-3">
+                            <img src="data:image/jpeg;base64,@Convert.ToBase64String(alojamiento.ImagenAlojamiento)"
+                                 class="img-fluid rounded"
+                                 alt="Imagen del alojamiento"
+                                 style="max-height: 250px; width: 100%">
+                        </div>
+                    }
+                </div>
+
+                <!-- Columna de Amenidades -->
+                <div class="col-md-6">
+                    <h5>Características y Comodidades</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <p>
+                                <strong>Sala:</strong>
+                                @if (alojamiento?.Sala == true)
+                                {
+                                    <i class="bi bi-check2 text-success fs-4 d-inline-block"></i>
+                                }
+                                else
+                                {
+                                    <i class="bi bi-x text-danger fs-4 d-inline-block"></i>
+                                }
+                            </p>
+
+                            <p>
+                                <strong>Cocina:</strong>
+                                @if (alojamiento?.Cocina == true)
+                                {
+                                    <i class="bi bi-check2 text-success fs-4 d-inline-block"></i>
+                                }
+                                else
+                                {
+                                    <i class="bi bi-x text-danger fs-4 d-inline-block"></i>
+                                }
+                            </p>
+
+                            <p>
+                                <strong>Cocineta:</strong>
+                                @if (alojamiento?.Cocineta == true)
+                                {
+                                    <i class="bi bi-check2 text-success fs-4 d-inline-block"></i>
+                                }
+                                else
+                                {
+                                    <i class="bi bi-x text-danger fs-4 d-inline-block"></i>
+                                }
+                            </p>
+
+                            <p>
+                                <strong>Terraza:</strong>
+                                @if (alojamiento?.Terraza == true)
+                                {
+                                    <i class="bi bi-check2 text-success fs-4 d-inline-block"></i>
+                                }
+                                else
+                                {
+                                    <i class="bi bi-x text-danger fs-4 d-inline-block"></i>
+                                }
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <p>
+                                <strong>Comedor:</strong>
+                                @if (alojamiento?.Comedor == true)
+                                {
+                                    <i class="bi bi-check2 text-success fs-4 d-inline-block"></i>
+                                }
+                                else
+                                {
+                                    <i class="bi bi-x text-danger fs-4 d-inline-block"></i>
+                                }
+                            </p>
+
+                            <p>
+                                <strong>Televisor:</strong>
+                                @if (alojamiento?.Televisor == true)
+                                {
+                                    <i class="bi bi-check2 text-success fs-4 d-inline-block"></i>
+                                }
+                                else
+                                {
+                                    <i class="bi bi-x text-danger fs-4 d-inline-block"></i>
+                                }
+                            </p>
+
+                            <p>
+                                <strong>Sofá cama:</strong>
+                                @if (alojamiento?.SofaCama == true)
+                                {
+                                    <i class="bi bi-check2 text-success fs-4 d-inline-block"></i>
+                                }
+                                else
+                                {
+                                    <i class="bi bi-x text-danger fs-4 d-inline-block"></i>
+                                }
+                            </p>
+
+                            <p>
+                                <strong>Nevera:</strong>
+                                @if (alojamiento?.Nevera == true)
+                                {
+                                    <i class="bi bi-check2 text-success fs-4 d-inline-block"></i>
+                                }
+                                else
+                                {
+                                    <i class="bi bi-x text-danger fs-4 d-inline-block"></i>
+                                }
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Información adicional de la tarifa -->
+                    <div class="mt-4">
+                        <h5>Detalles de la Tarifa</h5>
+                        <p><strong>Habitación #:</strong> @ViewBag.TarifaInfo.NumeroHabitacion</p>
+                        <p><strong>Personas incluidas:</strong> @ViewBag.TarifaInfo.PersonasIncluidas</p>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(alojamiento?.Observaciones))
+                    {
+                        <div class="mt-3 alert alert-info">
+                            <h6>Observaciones:</h6>
+                            <p>@alojamiento.Observaciones</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form asp-action="CreateFromTarifa" method="post">
+        <input type="hidden" asp-for="IdTarifa" />
+        <input type="hidden" asp-for="IdAlojamiento" />
+
+        <div class="form-group mb-3">
+            <label asp-for="IdTemporada" class="form-label">Temporada</label>
+            <select asp-for="IdTemporada" class="form-control" id="temporadaSelect">
+                <option value="1">Temporada Baja</option>
+                <option value="2">Temporada Media</option>
+                <option value="3">Temporada Alta</option>
+                <option value="4">Temporada Especial (L-J)</option>
+            </select>
+            <span asp-validation-for="IdTemporada" class="text-danger"></span>
+        </div>
+
+        <div id="temporada4Alert" class="alert alert-info d-none mb-3">
+            <i class="bi bi-info-circle"></i> Para la Temporada Especial solo se permiten reservas de <strong>Lunes a Jueves</strong>.
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label asp-for="FechaLlegada" class="form-label"></label>
+                    <input asp-for="FechaLlegada" class="form-control" type="date" id="fechaLlegadaInput"
+                           min="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                    <span asp-validation-for="FechaLlegada" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label asp-for="FechaSalida" class="form-label"></label>
+                    <input asp-for="FechaSalida" class="form-control" type="date" id="fechaSalidaInput"
+                           min="@DateTime.Today.AddDays(1).ToString("yyyy-MM-dd")" />
+                    <span asp-validation-for="FechaSalida" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="NumeroPersonas" class="form-label"></label>
+            <input asp-for="NumeroPersonas" class="form-control"
+                   min="1" max="@alojamiento?.CapacidadMaxima" />
+            <span asp-validation-for="NumeroPersonas" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Observaciones" class="form-label"></label>
+            <textarea asp-for="Observaciones" class="form-control" rows="3"></textarea>
+        </div>        
+        <div class="form-group form-check mb-3">
+            @if (alojamiento?.IdAlojamiento == 6)
+            {
+                <input class="form-check-input" type="checkbox" checked disabled id="checkedStatic">
+                <label class="form-check-label text-success" for="checkedStatic">
+                    Tiene Servicios
+                </label>
+            }
+            else
+            {
+                <input class="form-check-input" type="checkbox" disabled id="checkedStatic">
+                <label class="form-check-label text-success" for="checkedStatic">
+                    No Tiene Servicios
+                </label>
+            }
+        </div>
+
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary btn-lg me-3">
+                <i class="bi bi-check-circle"></i> Confirmar Reserva
+            </button>
+            <a asp-controller="TarifaAlojamientoes" asp-action="Index" class="btn btn-outline-secondary btn-lg">
+                <i class="bi bi-x-circle"></i> Cancelar
+            </a>
+        </div>
+    </form>
+</div>
+<style>
+    .amenities-list .badge {
+        font-size: 0.9rem;
+        padding: 0.5em 0.75em;
+    }
+
+    .card-header h5 {
+        margin-bottom: 0;
+    }
+
+    .bi {
+        font-size: 1.5rem;
+        display: inline-block;
+    }
+
+    .text-success {
+        color: #28a745 !important;
+    }
+
+    .text-danger {
+        color: #dc3545 !important;
+    }
+
+    .img-fluid {
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(document).ready(function() {
+            // Manejar cambio en el selector de temporada
+            $('#temporadaSelect').change(function() {
+                if ($(this).val() == '4') {
+                    $('#temporada4Alert').removeClass('d-none');
+
+                    // Validar las fechas actuales
+                    validateTemporada4Date($('#fechaLlegadaInput'));
+                    validateTemporada4Date($('#fechaSalidaInput'));
+                } else {
+                    $('#temporada4Alert').addClass('d-none');
+                }
+            });
+
+            // Validar fechas al cambiar
+            $('#fechaLlegadaInput, #fechaSalidaInput').change(function() {
+                if ($('#temporadaSelect').val() == '4') {
+                    validateTemporada4Date($(this));
+                }
+            });
+
+            // Función para validar fechas en temporada 4
+            function validateTemporada4Date(inputElement) {
+            const value = inputElement.val();
+            const date = new Date(value);
+
+            if (isNaN(date)) {
+                return; // No validar si la fecha no es válida
+            }
+
+            const day = date.getDay(); // 0 = Domingo, 1 = Lunes, ..., 6 = Sábado
+
+            if (day === 0 || day === 5 || day === 6) { // Dom, Vie, Sáb
+                inputElement.val('');
+                inputElement.focus();
+                // Opcional: alerta visual para el usuario
+                alert('Solo se permiten fechas de lunes a jueves.');
+            }
+        }
+
+        });
+    </script>
+}
